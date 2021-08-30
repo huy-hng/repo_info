@@ -1,5 +1,3 @@
-import os
-
 import requests
 from fuzzyfinder import fuzzyfinder
 from dotenv import load_dotenv
@@ -38,17 +36,3 @@ class RepoFinder:
 				matches.append(repo)
 		
 		return matches
-
-
-if __name__ == '__main__':
-	repository = RepoFinder('huy-hng', os.environ['GITHUB_TOKEN'])
-	# repository = RepoFinder('huy-hng')
-	
-	# matches = repository.find_repo('aud')
-	# for match in matches:
-	# 	print(match['name'])
-	repos = repository.get_repo_names()
-	for repo in repos:
-		print(repo)
-
-	
